@@ -1,0 +1,281 @@
+/* --- Reset & Base --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  background: #f4f7fa;
+  color: #222;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  margin-bottom: .5em;
+}
+
+p, .muted {
+  margin-bottom: .5em;
+}
+
+a {
+  color: #2e77d0;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* --- Layout --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2e77d0;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.brand-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.brand-sub {
+  font-size: .8rem;
+  color: #777;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+.navbtn {
+  background: none;
+  border: none;
+  font-size: .95rem;
+  padding: .5rem .75rem;
+  border-radius: .4rem;
+  transition: background .2s;
+}
+.navbtn:hover {
+  background: #eef3fa;
+}
+.navbtn.active {
+  background: #2e77d0;
+  color: white;
+}
+
+/* --- Cards & Sections --- */
+.card {
+  background: #fff;
+  border-radius: .6rem;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,.05);
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hero-text {
+  flex: 1;
+}
+.hero-img img {
+  max-width: 300px;
+  border-radius: .6rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+}
+
+.section.hidden {
+  display: none;
+}
+
+/* --- Buttons --- */
+.btn {
+  background: #2e77d0;
+  color: white;
+  border: none;
+  border-radius: .4rem;
+  padding: .5rem 1rem;
+  transition: background .2s;
+}
+.btn:hover {
+  background: #1c5cb0;
+}
+
+/* --- Thought Board --- */
+.post-form {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  margin-bottom: 1rem;
+}
+.avatar {
+  font-size: 1.8rem;
+}
+.post-area {
+  flex: 1;
+}
+textarea {
+  width: 100%;
+  padding: .5rem;
+  border-radius: .4rem;
+  border: 1px solid #ccc;
+  margin-bottom: .5rem;
+}
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.posts .post {
+  border-top: 1px solid #eee;
+  padding: .75rem 0;
+}
+.posts .post:last-child {
+  border-bottom: 1px solid #eee;
+}
+
+/* --- Mood Tracker --- */
+.mood-grid {
+  display: flex;
+  gap: .5rem;
+  margin: .75rem 0;
+}
+.mood-grid button {
+  font-size: 1.5rem;
+  background: none;
+  border: 2px solid transparent;
+  border-radius: .5rem;
+  padding: .5rem;
+}
+.mood-grid button.active {
+  border-color: #2e77d0;
+  background: #eef3fa;
+}
+.calendar {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+}
+.calendar .day {
+  width: 30px;
+  height: 30px;
+  border-radius: .4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .9rem;
+  background: #f0f0f0;
+}
+.calendar .happy { background: #c4f4c4; }
+.calendar .sad { background: #f4c4c4; }
+.calendar .ok { background: #f4f1c4; }
+
+/* --- Tasks --- */
+#taskList {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.task {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.task input {
+  transform: scale(1.2);
+}
+
+/* --- Therapy --- */
+.therapists {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.therapist {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.therapist img {
+  border-radius: 50%;
+}
+.therapist-info {
+  flex: 1;
+}
+
+/* --- Sidebar --- */
+aside {
+  font-size: .9rem;
+}
+aside hr {
+  margin: 1rem 0;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: .85rem;
+  color: #555;
+}
+
+/* --- Modal --- */
+.modal-back {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,.4);
+  justify-content: center;
+  align-items: center;
+}
+.modal {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: .6rem;
+  width: 300px;
+}
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.modal input, .modal select {
+  width: 100%;
+  margin: .5rem 0;
+  padding: .4rem;
+  border: 1px solid #ccc;
+  border-radius: .4rem;
+}

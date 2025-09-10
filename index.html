@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AromSpace — Prototype</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="logo">AS</div>
+    <div>
+      <div class="brand-title">AromSpace</div>
+      <div class="brand-sub">Mental Health & Wellness</div>
+    </div>
+  </div>
+
+  <nav aria-label="Primary">
+    <button class="navbtn active" data-target="thought">Thought Board</button>
+    <button class="navbtn" data-target="mood">Mood Tracker</button>
+    <button class="navbtn" data-target="tasks">Wellness Tasks</button>
+    <button class="navbtn" data-target="therapy">Online Therapy</button>
+  </nav>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero card">
+    <div class="hero-text">
+      <h1>AromSpace</h1>
+      <p class="muted">A safe, anonymous space to share your thoughts our app provide functions like: Thought board, mood tracking, wellness tasks, and access to licensed therapists.</p>
+      <div class="cta">
+        <button class="btn" id="joinBtn">Join Thought Board</button>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img alt="app mock" src="C:\Coding project\arom_space_prototype\Peach Pastel Cute Illustrative Pet Care Logo (1).png" />
+    </div>
+  </section>
+
+  <!-- Grid -->
+  <div class="grid">
+    <div id="appArea">
+      <!-- Thought Board -->
+      <section id="thought" class="card section">
+        <h2>Thought Board</h2>
+        <p class="muted">Express your inner thoughts anonymously and receive supportive replies.</p>
+
+        <div class="post-form">
+          <div class="avatar">😶</div>
+          <div class="post-area">
+            <textarea id="postText" placeholder="What's on your mind? (anonymous)"></textarea>
+            <div class="post-actions">
+              <div class="muted" id="postHint">Share something — people are kind here 💚</div>
+              <button class="btn" id="postBtn">Post</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="posts" id="postsList"></div>
+      </section>
+
+      <!-- Mood Tracker -->
+      <section id="mood" class="card section hidden">
+        <h2>Mood Tracker</h2>
+        <p class="muted">Select today's mood and write a quick note.</p>
+        <div class="mood-grid" id="moodOptions"></div>
+        <textarea id="moodNote" placeholder="Short note... (optional)"></textarea>
+        <div class="mood-actions">
+          <div class="muted">Saved moods last 7 days</div>
+          <button class="btn" id="saveMoodBtn">Save Mood</button>
+        </div>
+        <div class="calendar" id="moodCalendar"></div>
+      </section>
+
+      <!-- Tasks -->
+      <section id="tasks" class="card section hidden">
+        <h2>Wellness Tasks</h2>
+        <p class="muted">Choose tasks and mark when complete — small steps matter.</p>
+        <div id="taskList"></div>
+        <div class="task-footer">
+          <div class="muted" id="taskSummary">0 / 0 complete</div>
+          <button class="btn" id="resetTasks">Reset</button>
+        </div>
+      </section>
+
+      <!-- Therapy -->
+      <section id="therapy" class="card section hidden">
+        <h2>Online Therapy</h2>
+        <p class="muted">Meet licensed therapists nearby — mock booking below.</p>
+        <div class="therapists">
+          <div class="therapist">
+            <img src="https://placehold.co/80x80?text=Dr+R" alt="Dr Rath Sam" />
+            <div class="therapist-info">
+              <div class="therapist-name">Dr. Rath Sam</div>
+              <div class="muted">Psychologist — DMHSA instructor</div>
+            </div>
+            <button class="btn bookBtn" data-name="Dr. Rath Sam">Book</button>
+          </div>
+
+          <div class="therapist">
+            <img src="https://placehold.co/80x80?text=Dr+J" alt="Dr Jane" />
+            <div class="therapist-info">
+              <div class="therapist-name">Dr. Jane Harry</div>
+              <div class="muted">20 years experience — anxiety & depression</div>
+            </div>
+            <button class="btn bookBtn" data-name="Dr. Jane Harry">Book</button>
+          </div>
+
+          <div class="therapist">
+            <img src="https://placehold.co/80x80?text=Dr+W" alt="Dr Wise" />
+            <div class="therapist-info">
+              <div class="therapist-name">Dr. Wise Way</div>
+              <div class="muted">Culturally-aware therapy</div>
+            </div>
+            <button class="btn bookBtn" data-name="Dr. Wise Way">Book</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="card">
+      <h3>Quick Stats</h3>
+      <div class="muted">Posts: <strong id="statPosts">0</strong></div>
+      <div class="muted">Saved moods: <strong id="statMoods">0</strong></div>
+      <div class="muted">Tasks completed: <strong id="statTasks">0</strong></div>
+
+      <hr />
+      <h4>Why AromSpace?</h4>
+      <p class="muted">Provide a safe space, protect privacy, easily access therapists — designed for ages 15–30.</p>
+      <button class="btn" id="ctaJoin">Join Now</button>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  © AromSpace Prototype — Demo only.
+</footer>
+
+<!-- Modal -->
+<div class="modal-back" id="modalBack">
+  <div class="modal">
+    <h3 id="modalTitle">Book Session</h3>
+    <p class="muted" id="modalSubtitle">Select a time and confirm (mock booking)</p>
+    <input id="bookName" placeholder="You (anonymous ok)" />
+    <select id="bookSlot">
+      <option>Tomorrow 10:00</option>
+      <option>Tomorrow 14:00</option>
+      <option>In 2 days 09:00</option>
+    </select>
+    <div class="modal-actions">
+      <button class="btn secondary" id="modalCancel">Cancel</button>
+      <button class="btn" id="modalConfirm">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
